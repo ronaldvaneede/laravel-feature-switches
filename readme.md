@@ -1,5 +1,7 @@
 # Feature switches in Laravel 4
 
+[![Build Status](https://travis-ci.org/ronaldvaneede/laravel-feature-switches.png?branch=master)](https://travis-ci.org/ronaldvaneede/laravel-feature-switches)
+
 This package allows you to use feature switches in your code.
 
 ## Installation
