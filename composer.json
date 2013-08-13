@@ -1,10 +1,15 @@
 {
     "name": "ronaldvaneede/featureswitch",
     "description": "Allows you to configure feature switches",
+    "keywords": ["laravel","laravel4","laravel 4","featureswitch","featureswitches","feature switch","feature switches"],
+    "homepage": "http://github.com/ronaldvaneede/laravel-feature-switches",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ronald van Eede",
-            "email": "ronaldvaneede@gmail.com"
+            "email": "ronaldvaneede@gmail.com",
+            "homepage": "http://ronaldvaneede.me",
+            "role": "Developer"
         }
     ],
     "require": {
