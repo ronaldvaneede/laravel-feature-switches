@@ -1,20 +1,23 @@
 <?php namespace Ronaldvaneede\Featureswitch;
 
-use \Mockery as mock;
+use \Mockery;
 
 class FeatureSwitchTest extends \PHPUnit_Framework_TestCase {
 
+    //private $config;
+
     public function setUp() {
-        $this->featureswitch = new Featureswitch();
+        $this->config = Mockery::mock('Illuminate\Config\Repository');
+        $this->featureswitch = new Featureswitch($this->config);
     }
 
     public function tearDown() {
-
+        Mockery::close();
     }
-    
-    public function testShouldReturnTrue()
+
+    public function testCheckShouldFailWhenThereIsNoConfiguration()
     {
-        $this->assertTrue($this->featureswitch->check());
+        $this->config->shouldReceive('has')->once()->andReturn(false);
+        $this->assertEquals(false, $this->featureswitch->check('feature'));
     }
-
 }

@@ -30,7 +30,7 @@ class FeatureswitchServiceProvider extends ServiceProvider {
 	{
 		$this->app['featureswitch'] = $this->app->share(function($app)
 		{
-			return new Featureswitch();
+			return new Featureswitch($app['config']);
 		});
 
 		$this->app->booting(function()
