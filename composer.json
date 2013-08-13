@@ -17,9 +17,6 @@
         "illuminate/filesystem": "4.0.x"
     },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
         "psr-0": {
             "Ronaldvaneede\\Featureswitch": "src/"
         }
