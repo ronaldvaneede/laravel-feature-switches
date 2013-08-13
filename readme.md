@@ -27,20 +27,6 @@ After that add the service provider to the `providers` array within the `app/con
 
 That's it!
 
-## Wishes
-
-In the end this should support a configuration like this:
-
-```php
-// on / off / users -> user_list => 'a,b,c' / staff / 1% 
-'features' => array(
-    'login' => array('enabled' => 'on'),
-    'facebook' => array('enabled' => 'off'),
-    'google+' => array('enabled' => '5%'),
-    'twitter' => array('enabled' => 'users', 'user_list' => 'ronald,jaap,piet')
-)
-```
-
 ## Using Feature switches
 
 To use the feature switches you have to add this to the `app/config/app.php` file:
@@ -54,3 +40,17 @@ To use the feature switches you have to add this to the `app/config/app.php` fil
 
 Then you can use `Featureswitch::allow('feature-a')` and `Featureswitch::allow('feature-b')` to check if the feature is available.
 The `allow()` method will return either `true` or `false`.
+
+## Wishes
+
+In the end this should support a configuration like this:
+
+```php
+// on / off / users -> user_list => 'a,b,c' / staff / 1%
+'features' => array(
+    'login' => array('enabled' => 'on'),
+    'facebook' => array('enabled' => 'off'),
+    'google+' => array('enabled' => '5%'),
+    'twitter' => array('enabled' => 'users', 'user_list' => 'ronald,jaap,piet')
+)
+```
