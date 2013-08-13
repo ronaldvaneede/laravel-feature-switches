@@ -26,7 +26,8 @@ class Featureswitch {
      */
     private function checkAllowed($key)
     {
-        if ('on' === $this->getConfiguration($key)['enabled']) {
+        $config = $this->getConfiguration($key);
+        if ('on' === $config['enabled']) {
             return true;
         }
         return false;
