@@ -12,8 +12,8 @@ class Featureswitch {
         $this->configuration = $configuration;
     }
 
-    public function check($feature) {
-        $key = "features.".$feature;
+    public function allow($feature) {
+        $key = "app.features.".$feature;
         if($this->isConfigured($key)) {
             return $this->checkAllowed($key);
         }

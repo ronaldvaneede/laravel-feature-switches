@@ -17,10 +17,11 @@ class FeatureSwitchTest extends \PHPUnit_Framework_TestCase {
     public function testCheckShouldFailWhenThereIsNoConfiguration()
     {
         $options = $this->getDummyOptions();
-        $this->config->getLoader()->shouldReceive('load')->once()->with('production', "features", null)->andReturn($options);
+        $this->config->getLoader()->shouldReceive('load')->once()->with('production', "app", null)->andReturn($options);
 
-        $this->assertEquals(true, $this->featureswitch->check('login'));
-        $this->assertEquals(false, $this->featureswitch->check('facebook'));
+        $this->assertEquals(true, $this->featureswitch->allow('login'));
+        $this->assertEquals(false, $this->featureswitch->allow('facebook'));
+        $this->assertEquals(false, $this->featureswitch->allow('notconfiguredfeature'));
     }
 
     private function getRepository()
@@ -31,10 +32,12 @@ class FeatureSwitchTest extends \PHPUnit_Framework_TestCase {
     private function getDummyOptions()
     {
         return array(
-            'login' => array('enabled' => 'on'),
-            'facebook' => array('enabled' => 'off'),
-            //'google+' => array('enabled' => '5%'),
-            //'twitter' => array('enabled' => 'users', 'user_list' => 'ronald,jaap,piet')
+            'features' => array(
+                'login' => array('enabled' => 'on'),
+                'facebook' => array('enabled' => 'off'),
+                //'google+' => array('enabled' => '5%'),
+                //'twitter' => array('enabled' => 'users', 'user_list' => 'ronald,jaap,piet')
+            )
         );
     }
 }

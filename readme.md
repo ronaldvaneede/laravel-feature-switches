@@ -41,4 +41,14 @@ In the end this should support a configuration like this:
 
 ## Using Feature switches
 
-...to be continued...
+To use the feature switches you have to add this to the `app/config/app.php` file:
+
+```php
+'features' => array(
+    'feature-a' => array('enabled' => 'on'),
+    'feature-b' => array('enabled' => 'off')
+)
+```
+
+Then you can use `Featureswitch::allow('feature-a')` and `Featureswitch::allow('feature-b')` to check if the feature is available.
+The `allow()` method will return either `true` or `false`.
