@@ -25,6 +25,20 @@ After that add the service provider to the `providers` array within the `app/con
 
 That's it!
 
+## Wishes
+
+In the end this should support a configuration like this:
+
+```php
+// on / off / users -> user_list => 'a,b,c' / staff / 1% 
+'features' => array(
+    'login' => array('enabled' => 'on'),
+    'facebook' => array('enabled' => 'off'),
+    'google+' => array('enabled' => '5%'),
+    'twitter' => array('enabled' => 'users', 'user_list' => 'ronald,jaap,piet')
+)
+```
+
 ## Using Feature switches
 
 ...to be continued...
