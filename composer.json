@@ -12,7 +12,9 @@
         "illuminate/support": "4.0.x"
     },
     "require-dev": {
-        "mockery/mockery": "dev-master"
+        "mockery/mockery": "dev-master",
+        "illuminate/config": "4.0.x",
+        "illuminate/filesystem": "4.0.x"
     },
     "autoload": {
         "classmap": [

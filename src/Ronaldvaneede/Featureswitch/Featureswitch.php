@@ -13,19 +13,30 @@ class Featureswitch {
     }
 
     public function check($feature) {
-        if(self::hasFeatureSwitchConfiguration()) {
+        $key = "features.".$feature;
+        if($this->isConfigured($key)) {
+            return $this->checkAllowed($key);
+        }
+        return false;
+    }
+
+    /**
+     * @param $key
+     * @return bool
+     */
+    private function checkAllowed($key)
+    {
+        if ('on' === $this->getConfiguration($key)['enabled']) {
             return true;
         }
         return false;
     }
 
-    private function getFeatureSwitchConfiguration() {
-        $get = $this->configuration->get('featureswitch::features');
-        return $get;
+    private function getConfiguration($feature) {
+        return $this->configuration->get($feature);
     }
 
-    private function hasFeatureSwitchConfiguration() {
-        $has = $this->configuration->has('featureswitch::features');
-        return $has;
+    private function isConfigured($feature) {
+        return $this->configuration->has($feature);
     }
 }
