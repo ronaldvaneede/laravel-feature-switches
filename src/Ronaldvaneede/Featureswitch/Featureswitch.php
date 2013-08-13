@@ -6,6 +6,6 @@ class Featureswitch {
     }
 
     public static function check() {
-        return true
+        return true;
     }
 }
