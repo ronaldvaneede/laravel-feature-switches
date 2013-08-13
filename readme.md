@@ -10,7 +10,7 @@ You can install this package trough Composer. Add this to your `composer.json` f
 ```js
 "require": {
     // ...
-    "ronaldvaneede/featureswitch": "dev-master"
+    "ronaldvaneede/laravel-feature-switches": "dev-master"
 }
 ```
 
